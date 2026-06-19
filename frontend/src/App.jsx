@@ -6,7 +6,6 @@ function App() {
 const [prompt, setPrompt] = useState("");
 const [data, setData] = useState(null);
 const [loading, setLoading] = useState(false);
-const [userAnswers, setUserAnswers] = useState({});
 const [results, setResults] = useState({});
 
   async function generateExercises() {
@@ -28,40 +27,6 @@ const [results, setResults] = useState({});
       setLoading(false);
     }
   }
-
-  function checkAnswers() {
-  const newResults = {};
-
-  data.questions.forEach((q, index) => {
-    const user = (userAnswers[index] || "").trim().toLowerCase();
-    const correct = (q.answer || "").trim().toLowerCase();
-
-    newResults[index] = {
-      correct: user === correct,
-      correctAnswer: q.answer,
-    };
-  });
-
-  setResults(newResults);
-}
-
-  async function generateAnswerKey() {
-  try {
-    console.log("Gerando gabarito...");
-
-    const response = await axios.post(
-      "https://exerai-o0qi.onrender.com/generate-answer-key",
-      data.questions
-    );
-
-    console.log("Resposta gabarito:", response.data);
-
-    setAnswers(response.data);
-  } catch (error) {
-    console.error("Erro ao gerar gabarito:", error);
-    alert("Erro ao gerar gabarito");
-  }
-}
 
   return (
   <div className="container">
@@ -125,7 +90,7 @@ const [results, setResults] = useState({});
 
     <button
       className="btn-secondary"
-      onClick={generateAnswerKey}
+      onClick={}
     >
       Correção
     </button>
