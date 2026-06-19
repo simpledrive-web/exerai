@@ -5,21 +5,30 @@ body {
   color: #e2e8f0;
 }
 
+/* CONTAINER PRINCIPAL */
 .container {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+/* TÍTULO */
 .title {
   text-align: center;
-  font-size: 28px;
+  font-size: 26px;
   margin-bottom: 20px;
-  color: #38bdf8;
+  color: #ffffff;
+  font-weight: 600;
 }
 
+/* TEXTAREA */
 .textarea {
   width: 100%;
+  max-width: 700px;
   padding: 12px;
   border-radius: 10px;
   border: none;
@@ -29,8 +38,10 @@ body {
   margin-bottom: 10px;
 }
 
+/* BOTÃO PRINCIPAL */
 .btn-primary {
   width: 100%;
+  max-width: 700px;
   padding: 12px;
   border: none;
   border-radius: 10px;
@@ -46,6 +57,7 @@ body {
   background: #0ea5e9;
 }
 
+/* BOTÃO SECUNDÁRIO */
 .btn-secondary {
   width: 100%;
   padding: 12px;
@@ -63,32 +75,47 @@ body {
   background: #16a34a;
 }
 
+/* SEÇÃO DOS EXERCÍCIOS */
 .section {
+  width: 100%;
+  max-width: 700px;
   margin-top: 20px;
-  padding: 15px;
-  background: #1e293b;
-  border-radius: 12px;
 }
 
+/* CARD */
 .card {
+  width: 100%;
   background: #0f172a;
-  padding: 15px;
-  border-radius: 10px;
-  margin-top: 10px;
+  padding: 18px;
+  border-radius: 12px;
+  margin-top: 12px;
+
   border: 1px solid #334155;
+  box-sizing: border-box;
 }
 
+/* TEXTO DA QUESTÃO */
+.card p {
+  margin-top: 8px;
+}
+
+/* INPUT */
 .answer-input {
   width: 100%;
   margin-top: 10px;
-  padding: 10px;
+  padding: 12px;
   border-radius: 8px;
+
   border: none;
   outline: none;
+
+  font-size: 14px;
+  box-sizing: border-box;
 }
 
+/* FEEDBACK */
 .feedback {
-  margin-top: 8px;
+  margin-top: 10px;
   font-weight: bold;
 }
 
@@ -96,4 +123,24 @@ body {
   display: block;
   margin-top: 4px;
   color: #f87171;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+
+  .section {
+    max-width: 100%;
+  }
+
+  .card {
+    padding: 14px;
+  }
+
+  .textarea,
+  .btn-primary {
+    max-width: 100%;
+  }
 }
