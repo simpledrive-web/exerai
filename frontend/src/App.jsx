@@ -13,11 +13,11 @@ function App() {
       setLoading(true);
 
       const response = await axios.post(
-        "http://localhost:3000/generate-exercises",
-        {
-          prompt,
-        }
-      );
+  "https://exerai-o0qi.onrender.com/generate-exercises",
+  {
+    prompt,
+  }
+);
 
       setData(response.data);
     } catch (error) {
@@ -30,10 +30,10 @@ function App() {
 
   async function generateAnswerKey() {
   try {
-    const response = await axios.post(
-      "http://localhost:3000/generate-answer-key",
-      data
-    );
+   const response = await axios.post(
+  "https://exerai-o0qi.onrender.com/generate-answer-key",
+  data
+);
 
     setAnswers(response.data);
   } catch (error) {
