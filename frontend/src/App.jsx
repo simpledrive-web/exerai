@@ -7,6 +7,7 @@ function App() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [answers, setAnswers] = useState(null);
+  const [userAnswers, setUserAnswers] = useState({});
 
   async function generateExercises() {
     try {
@@ -72,6 +73,19 @@ function App() {
             <div className="card" key={question.id}>
               <strong>Questão {question.id}</strong>
               <p>{question.question}</p>
+
+   <input
+  className="answer-input"
+  type="text"
+  placeholder="Digite sua resposta..."
+  value={userAnswers[index] || ""}
+  onChange={(e) =>
+    setUserAnswers({
+      ...userAnswers,
+      [index]: e.target.value,
+    })
+  }
+/>
               <small>Tipo: {question.type}</small>
             </div>
           ))}
