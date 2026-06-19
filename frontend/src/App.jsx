@@ -64,51 +64,46 @@ function App() {
     </button>
 
     {data && (
-      <>
-        <div className="section">
-          <h2>{data.title}</h2>
-          <p><strong>Idioma:</strong> {data.language}</p>
+  <>
+    <div className="section">
+      <h2>{data.title}</h2>
 
-          {data.questions.map((question) => (
-            <div className="card" key={question.id}>
-              <strong>Questão {question.id}</strong>
-              <p>{question.question}</p>
+      <p>
+        <strong>Idioma:</strong> {data.language}
+      </p>
 
-   <input
-  className="answer-input"
-  type="text"
-  placeholder="Digite sua resposta..."
-  value={userAnswers[index] || ""}
-  onChange={(e) =>
-    setUserAnswers({
-      ...userAnswers,
-      [index]: e.target.value,
-    })
-  }
-/>
-              <small>Tipo: {question.type}</small>
-            </div>
-          ))}
+      {data.questions.map((question, index) => (
+        <div className="card" key={index}>
+          <strong>Questão {index + 1}</strong>
+
+          <p>{question.question}</p>
+
+          <input
+            className="answer-input"
+            type="text"
+            placeholder="Digite sua resposta..."
+            value={userAnswers[index] || ""}
+            onChange={(e) =>
+              setUserAnswers({
+                ...userAnswers,
+                [index]: e.target.value,
+              })
+            }
+          />
+
+          <small>Tipo: {question.type}</small>
         </div>
+      ))}
 
-        <button className="btn-secondary" onClick={generateAnswerKey}>
-          Gerar Gabarito
-        </button>
-      </>
-    )}
-
-    {answers && (
-      <div className="section">
-        <h2>Gabarito</h2>
-
-        {answers.answers.map((item) => (
-          <div className="card" key={item.questionId}>
-            <strong>Questão {item.questionId}</strong>
-            <p>{item.answer}</p>
-          </div>
-        ))}
-      </div>
-    )}
+      <button
+        className="btn-secondary"
+        onClick={generateAnswerKey}
+      >
+        Gerar Gabarito
+      </button>
+    </div>
+  </>
+)}
   </div>
 );
 }
