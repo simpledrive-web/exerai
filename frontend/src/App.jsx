@@ -8,6 +8,10 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [answers, setAnswers] = useState(null);
   const [userAnswers, setUserAnswers] = useState({});
+  const [data, setData] = useState(null);
+const [loading, setLoading] = useState(false);
+const [userAnswers, setUserAnswers] = useState({});
+const [results, setResults] = useState({});
 
   async function generateExercises() {
     try {
@@ -28,6 +32,22 @@ function App() {
       setLoading(false);
     }
   }
+
+  function checkAnswers() {
+  const newResults = {};
+
+  data.questions.forEach((q, index) => {
+    const user = (userAnswers[index] || "").trim().toLowerCase();
+    const correct = (q.answer || "").trim().toLowerCase();
+
+    newResults[index] = {
+      correct: user === correct,
+      correctAnswer: q.answer,
+    };
+  });
+
+  setResults(newResults);
+}
 
   async function generateAnswerKey() {
   try {
@@ -93,6 +113,15 @@ function App() {
             })
           }
         />
+        {results[index] && (
+  <div className="feedback">
+    {results[index].correct ? "✔️ Correto" : "❌ Errado"}
+
+    {!results[index].correct && (
+      <small> (correto: {results[index].correctAnswer})</small>
+    )}
+  </div>
+)}
 
         <small>Tipo: {question.type}</small>
       </div>
@@ -102,7 +131,7 @@ function App() {
       className="btn-secondary"
       onClick={generateAnswerKey}
     >
-      Gerar Gabarito
+      Correção
     </button>
   </div>
 )}

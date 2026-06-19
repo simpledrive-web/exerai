@@ -83,6 +83,16 @@ Essas expressões pertencem a outros tempos verbais.
 
 REGRAS PARA EXERCÍCIOS DE INGLÊS:
 
+Para cada exercício gerado, inclua obrigatoriamente um campo "answer" com a resposta correta.
+
+Exemplo:
+
+{
+  "question": "I ___ (study) now",
+  "answer": "am studying",
+  "type": "affirmative"
+}
+
 O campo "type" deve corresponder exatamente ao tipo do exercício.
 
 Exemplos:
