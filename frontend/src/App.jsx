@@ -3,12 +3,12 @@ import axios from "axios";
 import "./App.css";
 
 function App() {
-  const [prompt, setPrompt] = useState("");
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [answers, setAnswers] = useState(null);
-  const [userAnswers, setUserAnswers] = useState({});
-  const [data, setData] = useState(null);
+const [prompt, setPrompt] = useState("");
+const [data, setData] = useState(null);
+const [loading, setLoading] = useState(false);
+const [userAnswers, setUserAnswers] = useState({});
+const [results, setResults] = useState({});
+
   async function generateExercises() {
     try {
       setLoading(true);
