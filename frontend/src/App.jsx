@@ -131,19 +131,6 @@ const [results, setResults] = useState({});
     </button>
   </div>
 )}
-
-{answers && answers.answers && (
-  <div className="section">
-    <h2>Gabarito</h2>
-
-    {answers.answers.map((item, index) => (
-      <div className="card" key={index}>
-        <strong>Questão {index + 1}</strong>
-        <p>{item.answer}</p>
-      </div>
-    ))}
-  </div>
-)}
   </div>
 );
 }
