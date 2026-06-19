@@ -68,44 +68,56 @@ function App() {
     </button>
 
     {data && (
-  <>
-    <div className="section">
-      <h2>{data.title}</h2>
+  <div className="section">
+    <h2>{data.title}</h2>
 
-      <p>
-        <strong>Idioma:</strong> {data.language}
-      </p>
+    <p>
+      <strong>Idioma:</strong> {data.language}
+    </p>
 
-      {data.questions.map((question, index) => (
-        <div className="card" key={index}>
-          <strong>Questão {index + 1}</strong>
+    {data.questions.map((question, index) => (
+      <div className="card" key={index}>
+        <strong>Questão {index + 1}</strong>
 
-          <p>{question.question}</p>
+        <p>{question.question}</p>
 
-          <input
-            className="answer-input"
-            type="text"
-            placeholder="Digite sua resposta..."
-            value={userAnswers[index] || ""}
-            onChange={(e) =>
-              setUserAnswers({
-                ...userAnswers,
-                [index]: e.target.value,
-              })
-            }
-          />
+        <input
+          className="answer-input"
+          type="text"
+          placeholder="Digite sua resposta..."
+          value={userAnswers[index] || ""}
+          onChange={(e) =>
+            setUserAnswers({
+              ...userAnswers,
+              [index]: e.target.value,
+            })
+          }
+        />
 
-          <small>Tipo: {question.type}</small>
-        </div>
-      ))}
+        <small>Tipo: {question.type}</small>
+      </div>
+    ))}
 
-      <button
-        className="btn-secondary"
-        onClick={generateAnswerKey}>
+    <button
+      className="btn-secondary"
+      onClick={generateAnswerKey}
+    >
       Gerar Gabarito
-      </button>
-    </div>
-  </>
+    </button>
+  </div>
+)}
+
+{answers && answers.answers && (
+  <div className="section">
+    <h2>Gabarito</h2>
+
+    {answers.answers.map((item, index) => (
+      <div className="card" key={index}>
+        <strong>Questão {index + 1}</strong>
+        <p>{item.answer}</p>
+      </div>
+    ))}
+  </div>
 )}
   </div>
 );
