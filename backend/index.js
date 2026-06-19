@@ -288,6 +288,8 @@ return res.json(parsed);
 }
 }); // fecha o app.post("/generate-answer-key")
 
-app.listen(process.env.PORT, () => {
-  console.log(`🔥 ExerAI rodando na porta ${process.env.PORT}`);
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log(`🔥 ExerAI rodando na porta ${PORT}`);
 });
