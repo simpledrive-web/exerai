@@ -1,13 +1,13 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #0f172a;
+  background: #11123b;
   color: #e2e8f0;
 }
 
 /* CONTAINER PRINCIPAL */
 .container {
-  max-width: 900px;
+  max-width: 800px;
   margin: 0 auto;
   padding: 20px;
 
@@ -19,7 +19,7 @@ body {
 /* TÍTULO */
 .title {
   text-align: center;
-  font-size: 26px;
+  font-size: 35px;
   margin-bottom: 20px;
   color: #ffffff;
   font-weight: 600;
@@ -45,8 +45,8 @@ body {
   padding: 12px;
   border: none;
   border-radius: 10px;
-  background: #38bdf8;
-  color: #0f172a;
+  background: #ffffff;
+  color: #000000;
   font-weight: bold;
   cursor: pointer;
   margin-bottom: 20px;
@@ -54,7 +54,7 @@ body {
 }
 
 .btn-primary:hover {
-  background: #0ea5e9;
+  background: #19629e;;
 }
 
 /* BOTÃO SECUNDÁRIO */
@@ -63,8 +63,8 @@ body {
   padding: 12px;
   border: none;
   border-radius: 10px;
-  background: #22c55e;
-  color: white;
+  background: #ffffff;
+  color: rgb(0, 0, 0);
   font-weight: bold;
   cursor: pointer;
   margin-top: 15px;
@@ -72,7 +72,7 @@ body {
 }
 
 .btn-secondary:hover {
-  background: #16a34a;
+  background: #19629e;
 }
 
 /* SEÇÃO DOS EXERCÍCIOS */
