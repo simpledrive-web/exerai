@@ -31,14 +31,18 @@ function App() {
 
   async function generateAnswerKey() {
   try {
-   const response = await axios.post(
-  "https://exerai-o0qi.onrender.com/generate-answer-key",
-  data
-);
+    console.log("Gerando gabarito...");
+
+    const response = await axios.post(
+      "https://exerai-o0qi.onrender.com/generate-answer-key",
+      data.questions
+    );
+
+    console.log("Resposta gabarito:", response.data);
 
     setAnswers(response.data);
   } catch (error) {
-    console.error(error);
+    console.error("Erro ao gerar gabarito:", error);
     alert("Erro ao gerar gabarito");
   }
 }
@@ -97,9 +101,8 @@ function App() {
 
       <button
         className="btn-secondary"
-        onClick={generateAnswerKey}
-      >
-        Gerar Gabarito
+        onClick={generateAnswerKey}>
+      Gerar Gabarito
       </button>
     </div>
   </>
